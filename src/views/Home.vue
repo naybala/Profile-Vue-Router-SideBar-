@@ -48,7 +48,7 @@
                                     361.805C17.4835 299.81 -17.1617 219.583
                                     9.19024 145.964Z" />
                                     <image class="home__blob-img" x="-80" y="15"
-                                        href="../assets/images/myProfile.png" />
+                                        href="../assets/Images/myProfile.png" />
                               </g>
                     </svg>
                 </div>
