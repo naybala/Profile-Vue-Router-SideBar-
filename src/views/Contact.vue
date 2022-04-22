@@ -81,6 +81,7 @@ img{
 }
 #popup{
   cursor: pointer;
+  
   position: fixed;
   top: 0px;
   bottom: 0px;
