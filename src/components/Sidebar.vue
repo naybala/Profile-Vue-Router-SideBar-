@@ -51,22 +51,10 @@ const ToggleMenu = () => {
 	localStorage.setItem("is_expanded", is_expanded.value)
 }
 
-const ActiveDark = () => {
-	const dark = localStorage.getItem('dark');
-	const activeDark = document.querySelector('.router-link-exact-active');
-	
-	 if(dark === '1'){
-        activeDark.style.backgroundColor = "#242f3f";
-    }else{
-    	activeDark.style.backgroundColor = "var(--light)";
-    }
-}
-
 const Menu = () => {
 	if(localStorage.getItem("is_expanded") === "true"){
 		ToggleMenu();
-	}
-	
+	}	
 }
 
 </script>
@@ -167,7 +155,8 @@ aside {
 
 			&.router-link-exact-active {
 				transition: 0.3s ease-in-out;
-				background-color: var(--light);
+				// background-color: var(--light);
+				background-color: #242f3f;
 				border-top-left-radius: 2rem;
 				border-bottom-left-radius: 2rem;
 				.material-icons, .text {

@@ -11,18 +11,14 @@ export default {
         activeDark(){
             const accept = localStorage.getItem('accepted');
             const themeToggler = document.querySelector('.theme-toggler');
-           
             if(accept === '1'){
                 const dark = localStorage.getItem('dark');
                 if(dark === '1'){
-                     const activeDark = document.querySelector('.router-link-exact-active');
                      themeToggler.classList.add('activeToggle');
                      document.body.classList.add('activeDark');
-                     activeDark.style.backgroundColor = "#242f3f";
                 }else{
                      themeToggler.classList.remove('activeToggle');
                      document.body.classList.remove('activeDark');
-                     activeDark.style.backgroundColor = "var(--light)";
                 }
                 //  const theme = localStorage.getItem('theme');
 
