@@ -1,5 +1,5 @@
 <template>
-	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
+	<aside :class="`${is_expanded ? 'is-expanded' : ''}`" >
 		<h4>Nay Ba La</h4>
 		<div class="menu-toggle-wrap">
 			<button class="menu-toggle" @click="ToggleMenu">
@@ -43,8 +43,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
+import { onMounted, ref } from 'vue'
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
 const ToggleMenu = () => {
@@ -52,12 +51,24 @@ const ToggleMenu = () => {
 	localStorage.setItem("is_expanded", is_expanded.value)
 }
 
+const ActiveDark = () => {
+	const dark = localStorage.getItem('dark');
+	const activeDark = document.querySelector('.router-link-exact-active');
+	
+	 if(dark === '1'){
+        activeDark.style.backgroundColor = "#242f3f";
+    }else{
+    	activeDark.style.backgroundColor = "var(--light)";
+    }
+}
+
 const Menu = () => {
 	if(localStorage.getItem("is_expanded") === "true"){
-		// console.log("hello");
 		ToggleMenu();
 	}
+	
 }
+
 </script>
 
 <style lang="scss" scoped>

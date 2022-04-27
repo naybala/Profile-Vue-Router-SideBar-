@@ -7,21 +7,18 @@
 		<!-- Content -->
 		<router-view />
 		<Cookiez/>
-		
 	</div>
-	<Track/>
+	
 </template>
 
 <script>
 import Sidebar from './components/Sidebar.vue'
 import Cookiez from './components/Cookiez.vue'
-import Track from './components/Track.vue'
+
 export default{
 	components:{
-		Track,
 		Sidebar,
 		Cookiez,
-		
 	}
 }
 </script>

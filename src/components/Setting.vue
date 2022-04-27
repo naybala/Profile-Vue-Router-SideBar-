@@ -9,7 +9,8 @@
               </div>
 
               <h3>pick an acent color</h3>
-              <div class="theme-colors">
+              <div>
+                <div class="theme-colors" @load="ascendTheme">
                   <div class="color" style="background:#3e6ff4"></div>
                   <div class="color" style="background:#0044fd"></div>
                   <div class="color" style="background:#27ae60"></div>
@@ -25,32 +26,96 @@
                   <div class="color" style="background:#914b6c"></div>
                   <div class="color" style="background:#fc07ef"></div>
               </div>
+              </div>
               <br>
               <h5>Comming Soon.....</h5>
             </div>
 	</main>
+  <DarkTrack/>
 </template>
 
 <script>
+import DarkTrack from './DarkTrack.vue'
+
 export default {
+  components:{
+    DarkTrack,
+	},
+  mounted() {
+           this.ascendTheme();
+        },
   methods:{
     themeToggler(){
       let themeToggler = document.querySelector('.theme-toggler');
-      let activeDark = document.querySelector('.router-link-exact-active');
       let toastAlert =document.querySelector('#cookie')
         themeToggler.classList.toggle('activeToggle');
           if (themeToggler.classList.contains('activeToggle')) {
               document.body.classList.add('activeDark');
-              activeDark.style.backgroundColor = "#242f3f";
               localStorage.setItem("dark", "1");
               toastAlert.classList.add('dark');
           } else {
               document.body.classList.remove('activeDark');
-              activeDark.style.backgroundColor = "var(--light)";
               localStorage.setItem("dark", "0");
               toastAlert.classList.remove('dark');
           }
     },
+    ascendTheme(){
+         const themeColor = document.querySelectorAll('.theme-colors .color');
+        themeColor.forEach(color => {
+            color.onclick = () => {
+                let background = color.style.background;
+                switch (background) {
+                case 'rgb(62, 111, 244)':
+                    localStorage.setItem("theme", "1");
+                    break;
+                case 'rgb(0, 68, 253)':
+                    localStorage.setItem("theme", "2");
+                    break;
+                case 'rgb(39, 174, 96)':
+                    localStorage.setItem("theme", "3");
+                    break;
+                case 'rgb(0, 238, 99)':
+                    localStorage.setItem("theme", "4");
+                    break;
+
+                case 'rgb(15, 185, 177)':
+                    localStorage.setItem("theme", "5");
+                    break;
+                case 'rgb(0, 255, 242)':
+                    localStorage.setItem("theme", "6");
+                    break;
+                case 'rgb(206, 178, 68)':
+                    localStorage.setItem("theme", "7");
+                    break;
+                case 'rgb(255, 204, 0)':
+                    localStorage.setItem("theme", "8");
+                    break;
+
+                case 'rgb(172, 53, 76)':
+                    localStorage.setItem("theme", "9");
+                    break;
+                case 'rgb(255, 0, 51)':
+                    localStorage.setItem("theme", "10");
+                    break;
+                case 'rgb(232, 67, 147)':
+                    localStorage.setItem("theme", "11");
+                    break;
+                case 'rgb(186, 238, 0)':
+                    localStorage.setItem("theme", "12");
+                    break;
+                case 'rgb(145, 75, 108)':
+                    localStorage.setItem("theme", "13");
+                    break;
+                case 'rgb(252, 7, 239)':
+                    localStorage.setItem("theme", "14");
+                    break;
+                default:
+                    break;
+            }
+                document.querySelector(':root').style.setProperty('--primary', background);
+            }
+        });
+    }
   }
 }
 </script>

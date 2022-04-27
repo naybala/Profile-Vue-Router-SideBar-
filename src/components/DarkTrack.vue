@@ -1,33 +1,29 @@
-<template  @load="tracking">
-   
+<template>
+   <div @load="activeDark"></div>
 </template>
 
 <script>
 export default {
    mounted() {
-           this.tracking();
+           this.activeDark();
         },
     methods:{
-        tracking(){
+        activeDark(){
             const accept = localStorage.getItem('accepted');
-            let activeDark = document.querySelector('.router-link-exact-active');
-                console.log(activeDark);
-            if(accept == 1){
+            const themeToggler = document.querySelector('.theme-toggler');
+           
+            if(accept === '1'){
                 const dark = localStorage.getItem('dark');
-                let activeDark = document.querySelector('.router-link-exact-active');
-                console.log(activeDark);
-                let themeToggler = document.querySelector('.theme-toggler');
-                if(dark == 1){
-                    themeToggler.classList.toggle('activeToggle')
-                    document.body.classList.add('activeDark');
-                    // activeDark.style.backgroundColor = "#242f3f";
+                if(dark === '1'){
+                     const activeDark = document.querySelector('.router-link-exact-active');
+                     themeToggler.classList.add('activeToggle');
+                     document.body.classList.add('activeDark');
+                     activeDark.style.backgroundColor = "#242f3f";
                 }else{
-                    document.body.classList.remove('activeDark');
-                    // activeDark.style.backgroundColor = "#f1f5f9;";
+                     themeToggler.classList.remove('activeToggle');
+                     document.body.classList.remove('activeDark');
+                     activeDark.style.backgroundColor = "var(--light)";
                 }
-
-
-
                 //  const theme = localStorage.getItem('theme');
 
                 // switch (theme) {
@@ -79,6 +75,7 @@ export default {
                 //         break;
                 // }
             }else if(accept == null){
+                 
                  localStorage.setItem("dark", "0");
             }
 
