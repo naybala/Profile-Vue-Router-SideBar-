@@ -1,7 +1,7 @@
 <template>
 	<main id="about-page">
 		<div class="about-Container text-center">
-			<div class="card shadow">
+			<div class="inner-Container">
 				<img src="../assets/Images/myFullProfile.jpg" alt="..." id="galleryOne" @click="imageViewOne">
 				<div class="infoContainer">
 					<h5 class="mt-1">I am Nay Ba La</h5>
@@ -24,7 +24,7 @@
             	</div>
 			</div>
 			
-			<div class="card shadow">
+			<div class="inner-Container">
 				<img src="../assets/Images/myInfo.jpg"  alt="..." id="galleryTwo" @click="imageViewTwo">
 				<h5 class="mt-1">I was gratuated from</h5>
 					<p><span class="text-primary">Hinthada
@@ -40,7 +40,7 @@
                                 gratuated certifie in Skills
                                 section.</p>
 			</div>
-			<div class="card shadow" id="hidden1">
+			<div class="inner-Container">
 				<img src="../assets/Images/certificate-3.png" alt="..." id="galleryThree" @click="imageViewThree">
 				<h5 class="mt-1">I also have</h5>
 					<p class="about__text"> - A website wesign
@@ -112,7 +112,6 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-	
 	}
 	.about-Container > div{
 		justify-content: center;
@@ -122,10 +121,12 @@ export default {
 		padding: .8rem;
 	}
 	.card{
-		background: var(--light);
 		border: none;
 		margin-left: 0.5rem;
 	}
+	.activeCard{
+	background-color: #242f3f;;
+   }		
 	img{
 		text-align: center;
 		border-radius: 0.3rem;

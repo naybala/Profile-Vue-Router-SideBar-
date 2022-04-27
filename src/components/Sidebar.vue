@@ -1,12 +1,6 @@
 <template>
 	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
-		<div class="logo">
-			<!-- <a href="#">
-				<img :src="logoURL" alt="Mypic" /> 
-			</a> -->
-			<h4>Nay Ba La</h4>
-		</div>
-
+		<h4>Nay Ba La</h4>
 		<div class="menu-toggle-wrap">
 			<button class="menu-toggle" @click="ToggleMenu">
 				<span class="material-icons">keyboard_double_arrow_right</span>
@@ -40,7 +34,7 @@
 		<div class="flex"></div>
 		
 		<div class="menu">
-			<router-link to="/setting" class="button">
+			<router-link to="/setting" class="button" @click="Menu">
 				<span class="material-icons">settings</span>
 				<span class="text">Settings</span>
 			</router-link>
@@ -50,7 +44,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import logoURL from '../assets/Images/myProfile.png'
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
@@ -65,9 +58,6 @@ const Menu = () => {
 		ToggleMenu();
 	}
 }
-
-
-
 </script>
 
 <style lang="scss" scoped>

@@ -12,7 +12,7 @@
 
                     <p>Email : <a href="#">naybala.153808@gmail.com</a></p>
                     <p>Phone : <a href="#">+95 9 763684400</a></p>
-                    <a href="#about" class="button text-decoration-none">Discover</a>
+                    <a href="#about" class="button text-decoration-none">DownLoad CV</a>
                      <div class="home__social mt-1">
                             <a
                                 href="https://www.facebook.com/profile.php?id=100076412994170"

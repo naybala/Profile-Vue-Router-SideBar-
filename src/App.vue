@@ -2,14 +2,28 @@
 	<div class="app">
 		<!-- Sidebar -->
 		<Sidebar />
-
+		<!-- cookiee -->
+		
 		<!-- Content -->
 		<router-view />
+		<Cookiez/>
+		
 	</div>
+	<Track/>
 </template>
 
-<script setup>
+<script>
 import Sidebar from './components/Sidebar.vue'
+import Cookiez from './components/Cookiez.vue'
+import Track from './components/Track.vue'
+export default{
+	components:{
+		Track,
+		Sidebar,
+		Cookiez,
+		
+	}
+}
 </script>
 
 <style lang="scss">
@@ -38,8 +52,13 @@ import Sidebar from './components/Sidebar.vue'
 
 body {
 	background: var(--light);
+	overflow-x: hidden;
 }
-
+body.activeDark {
+	overflow-x: hidden;
+	background: #242f3f;
+	color: #ffffff;
+}
 button {
 	cursor: pointer;
 	appearance: none;
@@ -60,4 +79,5 @@ button {
 		}
 	}
 }
+
 </style>
